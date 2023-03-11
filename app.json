@@ -11,24 +11,26 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.murphyguy.wpmhud"
     },
     "plugins": [
-      "@react-native-voice/voice"
+      [
+        "@react-native-voice/voice",
+        {
+          "microphonePermission": "Please allow microphone access to use speech recognition",
+          "speechRecognitionPermission": "Please allow speech recognition access so we can measure your reading speed. Nothing is saved or collected."
+        }
+      ]
     ],
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "permissions": [
-        "android.permission.RECORD_AUDIO"
-      ],
+      "permissions": ["android.permission.RECORD_AUDIO"],
       "package": "com.murphyguy.wpmhud"
     },
     "web": {
