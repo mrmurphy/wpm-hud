@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import {
   View,
   Text,
-  Button,
   TouchableOpacity,
   StyleSheet,
   SafeAreaView,
@@ -96,12 +95,8 @@ const SpeechToText = () => {
               Text will appear here when you start speaking
             </Text>
           )}
-          <Text
-            style={styles.transcriptText}
-            // ellipsizeMode="middle"
-            numberOfLines={24}
-          >
-            {spokenText.slice(-400, spokenText.length)}
+          <Text style={styles.transcriptText}>
+            {spokenText.slice(-900, spokenText.length)}
           </Text>
         </View>
       </View>
@@ -145,10 +140,21 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "flex-end",
     alignContent: "flex-end",
+    overflow: "hidden",
   },
   transcriptContainerEmpty: {
     justifyContent: "center",
     alignContent: "center",
+  },
+  transcriptText: {
+    fontSize: 20,
+    position: "absolute",
+    left: 24,
+    right: 24,
+    bottom: 24,
+    // Not bright white, but enough contrast to be readable
+    color: "#e6e6e6",
+    textAlign: "left",
   },
   bottomHalf: {
     flex: 1,
@@ -160,12 +166,6 @@ const styles = StyleSheet.create({
     // an inactive, placeholder gray
     color: "#808080",
     fontSize: 18,
-  },
-  transcriptText: {
-    fontSize: 20,
-    // Not bright white, but enough contrast to be readable
-    color: "#e6e6e6",
-    textAlign: "left",
   },
   wmpLabel: {
     fontSize: 40,
