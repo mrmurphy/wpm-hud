@@ -5,7 +5,7 @@ It's intended to help parents and children who are working on improving reading 
 
 The icon artwork is original, designed by me, and released under the MIT license along with the other code in this repository.
 
-# License
+# License (MIT)
 
 Copyright 2023 Murphy (Jackson) Randle
 
